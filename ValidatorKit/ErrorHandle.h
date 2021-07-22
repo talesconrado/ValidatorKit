@@ -17,10 +17,12 @@ typedef NS_ENUM(NSInteger, InvalidString) {
 
 @interface ErrorHandle: NSObject
 
-@property (readwrite, assign) InvalidString errorType;
+@property (nonatomic, readwrite, assign) InvalidString errorType;
 @property (readwrite, assign) NSString* errorMessage;
 
 - (NSString *) errorFeedback: (InvalidString) invalido;
+
+
 @end
 
 

@@ -20,11 +20,13 @@
     return self;
 }
 
-- (BOOL) validate:(NSString *) text {
+- (NSMutableArray *) validate:(NSString *) text {
+    NSMutableArray<ErrorHandle *> *errors = [[NSMutableArray<ErrorHandle *>  alloc] init];
     if (maxLength > 0) {
         @try{
             [self validateMaxSize:text andSize:maxLength];
         } @catch(ErrorHandle *e) {
+            [errors addObject:e];
             NSLog(@"Exception: %@", e.errorMessage);
         } @finally{
             NSLog(@"Continuando");
@@ -32,26 +34,35 @@
     }
 
     if (minLength > 0) {
-        if (![self validateMinSize:text andSize:minLength]) {
-            return NO;
+        @try{
+            [self validateMaxSize:text andSize:maxLength];
+        } @catch(ErrorHandle *e) {
+            [errors addObject:e];
+            NSLog(@"Exception: %@", e.errorMessage);
+        } @finally{
+            NSLog(@"Continuando");
         }
     }
 
     if (allowSpecialCharacters == NO) {
-        if (![self validateSpecial:text]) {
-            return NO;
+        @try{
+            [self validateSpecial:text];
+        } @catch(ErrorHandle *e) {
+            [errors addObject:e];
+            NSLog(@"Exception: %@", e.errorMessage);
+        } @finally{
+            NSLog(@"Continuando");
         }
     }
 
-    return YES;
+    return errors;
 }
 
 
 - (void) validateMaxSize:(NSString *) text andSize: (int) size {
     if ([text length] > size) {
-//        @throw [NSException exceptionWithName: (@"Error") reason:(@"Error") userInfo:nil];
-        ErrorHandle *error = [[ErrorHandle alloc] init];
-        error.errorMessage = [error errorFeedback:tooLong];
+        ErrorHandle * error = [[ErrorHandle alloc] init];
+        error.errorType = tooLong;
         @throw error;
 //        return NO;
     } else {
@@ -60,23 +71,29 @@
     
 }
 
-- (BOOL) validateMinSize:(NSString *) text andSize: (int) size {
+- (void) validateMinSize:(NSString *) text andSize: (int) size {
     if ([text length] < size) {
-        return NO;
+        ErrorHandle * error = [[ErrorHandle alloc] init];
+        error.errorType = tooShort;
+        @throw error;
+//        return NO;
     } else {
-        return YES;
+//        return YES;
     }
 }
 
-- (BOOL) validateSpecial:(NSString *) text {
+- (void) validateSpecial:(NSString *) text {
 
     NSCharacterSet * set = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
 
     if ([text rangeOfCharacterFromSet:set].location != NSNotFound) {
-        return NO;
+        ErrorHandle * error = [[ErrorHandle alloc] init];
+        error.errorType = specialCharacterFound;
+        @throw error;
+//        return NO;
     }
 
-    return YES;
+//    return YES;
 }
 
 
@@ -91,5 +108,10 @@
         case tooLong: return(@"Mais caracteres do que esperado"); break;
         case specialCharacterFound: return(@"Invalid"); break;
     }
+}
+
+- (void)setErrorType:(InvalidString) errorType{
+    _errorType = errorType;
+    _errorMessage = [self errorFeedback: errorType];
 }
 @end
