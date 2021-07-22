@@ -10,6 +10,8 @@
 		E94E69D826A9AB1A008DBA57 /* ValidatorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94E69CE26A9AB19008DBA57 /* ValidatorKit.framework */; };
 		E94E69DD26A9AB1A008DBA57 /* ValidatorKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E69DC26A9AB1A008DBA57 /* ValidatorKitTests.m */; };
 		E94E69DF26A9AB1A008DBA57 /* ValidatorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E94E69D126A9AB19008DBA57 /* ValidatorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E94E69E926A9AB3C008DBA57 /* FTValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = E94E69E826A9AB3C008DBA57 /* FTValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E94E69EB26A9AB4B008DBA57 /* FTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E69EA26A9AB4B008DBA57 /* FTValidator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		E94E69D726A9AB1A008DBA57 /* ValidatorKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValidatorKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94E69DC26A9AB1A008DBA57 /* ValidatorKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidatorKitTests.m; sourceTree = "<group>"; };
 		E94E69DE26A9AB1A008DBA57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E94E69E826A9AB3C008DBA57 /* FTValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTValidator.h; sourceTree = "<group>"; };
+		E94E69EA26A9AB4B008DBA57 /* FTValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTValidator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				E94E69D126A9AB19008DBA57 /* ValidatorKit.h */,
 				E94E69D226A9AB19008DBA57 /* Info.plist */,
+				E94E69E826A9AB3C008DBA57 /* FTValidator.h */,
+				E94E69EA26A9AB4B008DBA57 /* FTValidator.m */,
 			);
 			path = ValidatorKit;
 			sourceTree = "<group>";
@@ -94,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E94E69DF26A9AB1A008DBA57 /* ValidatorKit.h in Headers */,
+				E94E69E926A9AB3C008DBA57 /* FTValidator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94E69EB26A9AB4B008DBA57 /* FTValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
