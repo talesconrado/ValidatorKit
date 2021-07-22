@@ -7,12 +7,16 @@
 
 #import <Foundation/Foundation.h>
 #import "FTValidator.h"
+#import "ErrorHandle.h"
 
 int main(int argc, const char * argv[]) {
     FTValidator *validator = [[FTValidator alloc] init];
     validator.maxLength = 3;
-    [validator validate:@"Maior"];
-//    NSLog()
+    validator.minLength = 8;
+    validator.allowSpecialCharacters = true;
 
+
+//    NSArray<ErrorHandle *> *errors = [validator validate:@"Maior"];
+    NSLog(@"%@", [validator validate:@"Maior%"]);
     return 0;
 }
