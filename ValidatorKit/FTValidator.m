@@ -28,9 +28,7 @@
         } @catch(ErrorHandle *e) {
             [errors addObject:e];
             NSLog(@"Exception: %@", e.errorMessage);
-        } @finally{
-            NSLog(@"Continuando");
-        }
+        } @finally{}
     }
 
     if (minLength > 0) {
@@ -39,9 +37,7 @@
         } @catch(ErrorHandle *e) {
             [errors addObject:e];
             NSLog(@"Exception: %@", e.errorMessage);
-        } @finally{
-            NSLog(@"Continuando");
-        }
+        } @finally{}
     }
 
     if (allowSpecialCharacters == NO) {
@@ -50,9 +46,7 @@
         } @catch(ErrorHandle *e) {
             [errors addObject:e];
             NSLog(@"Exception: %@", e.errorMessage);
-        } @finally{
-            NSLog(@"Continuando");
-        }
+        } @finally{}
     }
 
     return errors;
@@ -104,9 +98,9 @@
 
 -(NSString *) errorFeedback: (InvalidString)invalidated{
     switch (invalidated) {
-        case tooShort: return(@"Invalid"); break;
-        case tooLong: return(@"Mais caracteres do que esperado"); break;
-        case specialCharacterFound: return(@"Invalid"); break;
+        case tooShort: return(@"Less characters than expected"); break;
+        case tooLong: return(@"More characters than expected"); break;
+        case specialCharacterFound: return(@"Found special characters"); break;
     }
 }
 

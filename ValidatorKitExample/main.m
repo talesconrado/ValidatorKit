@@ -14,8 +14,6 @@ int main(int argc, const char * argv[]) {
     validator.maxLength = 3;
     validator.minLength = 8;
     validator.allowSpecialCharacters = true;
-
-
 //    NSArray<ErrorHandle *> *errors = [validator validate:@"Maior"];
     NSLog(@"%@", [validator validate:@"Maior%"]);
     return 0;
