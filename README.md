@@ -23,12 +23,13 @@ let stringValidator: FTValidator = {
     validator.maxLength = 4
     validator.minLength = 1
     validator.allowSpecialCharacters =` false
+    
     return validator
-    }()
+}()
     
-    let myString = "MY STRING"
+let myString = "MY STRING"
     
-    guard stringValidator.validate(myString).count == 0 else { 
+guard stringValidator.validate(myString).count == 0 else { 
     // handle errors
-    }
+}
 ```
