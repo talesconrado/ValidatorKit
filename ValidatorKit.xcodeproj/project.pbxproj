@@ -11,6 +11,7 @@
 		E9017B5826AEE0A400F213D4 /* ValidatorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94E69CE26A9AB19008DBA57 /* ValidatorKit.framework */; };
 		E9017B6326AEE1E500F213D4 /* ValidatorKit-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = E9017B6026AEE16F00F213D4 /* ValidatorKit-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9017B6426AEED5E00F213D4 /* FTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E69EA26A9AB4B008DBA57 /* FTValidator.m */; };
+		E9017B6526AF01CD00F213D4 /* NSString+StringValidations.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB409B826AED9C90043A6E1 /* NSString+StringValidations.m */; };
 		E94E69DF26A9AB1A008DBA57 /* ValidatorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E94E69D126A9AB19008DBA57 /* ValidatorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E94E69E926A9AB3C008DBA57 /* FTValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = E94E69E826A9AB3C008DBA57 /* FTValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E94E69EB26A9AB4B008DBA57 /* FTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E69EA26A9AB4B008DBA57 /* FTValidator.m */; };
@@ -294,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E94E69EB26A9AB4B008DBA57 /* FTValidator.m in Sources */,
+				E9017B6526AF01CD00F213D4 /* NSString+StringValidations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

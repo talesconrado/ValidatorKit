@@ -8,3 +8,4 @@
 #import <ValidatorKit.h>
 #import <FTValidator.h>
 #import <ErrorHandle.h>
+#import <NSString+StringValidations.h>
