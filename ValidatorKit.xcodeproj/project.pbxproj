@@ -51,6 +51,7 @@
 		EC8A709326A9B69500DC7547 /* ValidatorKitExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ValidatorKitExample; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8A709526A9B69500DC7547 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EC8A709A26A9B6B700DC7547 /* ErrorHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorHandle.h; sourceTree = "<group>"; };
+		ECAC632926AAFEC500B2568B /* ValidatorKitExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ValidatorKitExample-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				EC8A709526A9B69500DC7547 /* main.m */,
+				ECAC632926AAFEC500B2568B /* ValidatorKitExample-Bridging-Header.h */,
 			);
 			path = ValidatorKitExample;
 			sourceTree = "<group>";
@@ -213,6 +215,7 @@
 					};
 					EC8A709226A9B69500DC7547 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -491,26 +494,43 @@
 		EC8A709726A9B69500DC7547 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YBM22U9FU3;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				PRODUCT_BUNDLE_IDENTIFIER = talesconrado.ValidatorKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "ValidatorKitExample/ValidatorKitExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		EC8A709826A9B69500DC7547 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YBM22U9FU3;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				PRODUCT_BUNDLE_IDENTIFIER = talesconrado.ValidatorKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "ValidatorKitExample/ValidatorKitExample-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
