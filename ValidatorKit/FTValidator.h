@@ -10,6 +10,8 @@
 @property int maxLength;
 @property int minLength;
 @property BOOL allowSpecialCharacters;
-- (BOOL) validate:(NSString *) text;
+@property BOOL onlyNumbers;
+@property BOOL notEmptyNorOnlyWhitespaces;
+-(NSMutableArray *) validate:(NSString *) text;
 
 @end
