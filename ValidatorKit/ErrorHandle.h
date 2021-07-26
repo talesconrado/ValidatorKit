@@ -12,6 +12,8 @@ typedef NS_ENUM(NSInteger, InvalidString) {
     tooShort,
     tooLong,
     specialCharacterFound,
+    notANumber,
+    notEmptyNorWithWhitespace,
 };
 
 

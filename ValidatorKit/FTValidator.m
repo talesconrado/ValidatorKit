@@ -7,17 +7,20 @@
 #import <Foundation/Foundation.h>
 #import "FTValidator.h"
 #import "ErrorHandle.h"
+#import "NSString+StringValidations.h"
 /// An object that represents a FTValidator.
 ///
 /// FTValidator is a string validator. Create a new FTValidator() to build constraints and use then to validate your input.
 @implementation FTValidator
-@synthesize maxLength, minLength, allowSpecialCharacters;
+@synthesize maxLength, minLength, allowSpecialCharacters, onlyNumbers, notEmptyNorOnlyWhitespaces;
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
         allowSpecialCharacters = true;
+        onlyNumbers = false;
+        notEmptyNorOnlyWhitespaces = false;
     }
     return self;
 }
@@ -26,6 +29,9 @@
 /// @param text The string you want to validade.
 /// @return Returns an array containing all the non-passed constraints.
 - (NSMutableArray *) validate:(NSString *) text {
+    
+    //Check if the string is empty and if so the function throw an error
+    if ([text isEmpty]) {} ;
     NSMutableArray<ErrorHandle *> *errors = [[NSMutableArray<ErrorHandle *>  alloc] init];
     if (maxLength > 0) {
         @try{
@@ -38,7 +44,7 @@
 
     if (minLength > 0) {
         @try{
-            [self validateMaxSize:text andSize:maxLength];
+            [self validateMinSize:text andSize:maxLength];
         } @catch(ErrorHandle *e) {
             [errors addObject:e];
             NSLog(@"Exception: %@", e.errorMessage);
@@ -48,6 +54,24 @@
     if (allowSpecialCharacters == NO) {
         @try{
             [self validateSpecial:text];
+        } @catch(ErrorHandle *e) {
+            [errors addObject:e];
+            NSLog(@"Exception: %@", e.errorMessage);
+        } @finally{}
+    }
+
+    if (onlyNumbers) {
+        @try{
+            [self validateOnlyNumbers:text];
+        } @catch(ErrorHandle *e) {
+            [errors addObject:e];
+            NSLog(@"Exception: %@", e.errorMessage);
+        } @finally{}
+    }
+
+    if (notEmptyNorOnlyWhitespaces) {
+        @try{
+            [self validateNotEmptyNorWhitespace:text];
         } @catch(ErrorHandle *e) {
             [errors addObject:e];
             NSLog(@"Exception: %@", e.errorMessage);
@@ -87,6 +111,30 @@
     }
 }
 
+- (void) validateOnlyNumbers:(NSString *) text {
+    NSCharacterSet* notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    if ([text rangeOfCharacterFromSet:notDigits].location != NSNotFound) {
+        ErrorHandle * error = [[ErrorHandle alloc] init];
+        error.errorType = notANumber;
+        @throw error;
+    }
+}
+
+- (void) validateNotEmptyNorWhitespace:(NSString *) text {
+    NSString * newString = [text stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if ([newString length] == 0) {
+        ErrorHandle * error = [[ErrorHandle alloc] init];
+        error.errorType = notEmptyNorWithWhitespace;
+        @throw error;
+    }
+}
+
+//Recieve a string an throw an error if the string is not a email
+-(void) validateEmail: (NSString *) text{
+    if ([text isEmail]){} else {
+        
+    }
+}
 @end
 
 @implementation ErrorHandle
@@ -96,6 +144,8 @@
         case tooShort: return(@"Less characters than expected"); break;
         case tooLong: return(@"More characters than expected"); break;
         case specialCharacterFound: return(@"Found special characters"); break;
+        case notANumber: return(@"Found a non number character"); break;
+        case notEmptyNorWithWhitespace: return(@"The string is empty or has only whitespaces"); break;
     }
 }
 
