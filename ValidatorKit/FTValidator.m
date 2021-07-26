@@ -8,6 +8,8 @@
 #import "FTValidator.h"
 #import "ErrorHandle.h"
 #import "NSString+StringValidations.h"
+#import "NSString+StringValidations.m"
+
 /// An object that represents a FTValidator.
 ///
 /// FTValidator is a string validator. Create a new FTValidator() to build constraints and use then to validate your input.
@@ -29,9 +31,12 @@
 /// @param text The string you want to validade.
 /// @return Returns an array containing all the non-passed constraints.
 - (NSMutableArray *) validate:(NSString *) text {
-    
     //Check if the string is empty and if so the function throw an error
-    if ([text isEmpty]) {} ;
+    if ([text isEmail]){
+        NSLog(@"entrou");
+    } else {
+        NSLog(@"Nao entrou");
+    }
     NSMutableArray<ErrorHandle *> *errors = [[NSMutableArray<ErrorHandle *>  alloc] init];
     if (maxLength > 0) {
         @try{
@@ -111,6 +116,7 @@
     }
 }
 
+//Recieve a string an throw an error if the string has a non-number character
 - (void) validateOnlyNumbers:(NSString *) text {
     NSCharacterSet* notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
     if ([text rangeOfCharacterFromSet:notDigits].location != NSNotFound) {
@@ -120,6 +126,7 @@
     }
 }
 
+//Recieve a string an throw an error if the string has no character
 - (void) validateNotEmptyNorWhitespace:(NSString *) text {
     NSString * newString = [text stringByReplacingOccurrencesOfString:@" " withString:@""];
     if ([newString length] == 0) {
@@ -132,7 +139,9 @@
 //Recieve a string an throw an error if the string is not a email
 -(void) validateEmail: (NSString *) text{
     if ([text isEmail]){} else {
-        
+        ErrorHandle * error = [[ErrorHandle alloc] init];
+        error.errorType = notAnEmail;
+        @throw error;
     }
 }
 @end
@@ -146,6 +155,7 @@
         case specialCharacterFound: return(@"Found special characters"); break;
         case notANumber: return(@"Found a non number character"); break;
         case notEmptyNorWithWhitespace: return(@"The string is empty or has only whitespaces"); break;
+        case notAnEmail: return(@"The string is empty or has only whitespaces"); break;
     }
 }
 

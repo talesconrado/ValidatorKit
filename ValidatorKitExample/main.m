@@ -14,8 +14,12 @@ int main(int argc, const char * argv[]) {
     validator.maxLength = 3;
     validator.minLength = 8;
     validator.allowSpecialCharacters = true;
-
-//    NSArray<ErrorHandle *> *errors = [validator validate:@"Maior"];
+    
+    @try {
+        [validator validateEmail: @"fernanddolucasmail.com"];
+    } @catch (ErrorHandle* e){
+        NSLog(@"%@", e.errorMessage);
+    } @finally{}
     NSLog(@"%@", [validator validate:@"Maior%"]);
     return 0;
 }

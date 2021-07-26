@@ -107,7 +107,8 @@
 		E94E69D026A9AB19008DBA57 /* ValidatorKit */ = {
 			isa = PBXGroup;
 			children = (
-				ECB409B626AED97D0043A6E1 /* Categories */,
+				ECB409B726AED9C90043A6E1 /* NSString+StringValidations.h */,
+				ECB409B826AED9C90043A6E1 /* NSString+StringValidations.m */,
 				E94E69D126A9AB19008DBA57 /* ValidatorKit.h */,
 				E94E69D226A9AB19008DBA57 /* Info.plist */,
 				E94E69E826A9AB3C008DBA57 /* FTValidator.h */,
@@ -133,15 +134,6 @@
 				ECAC632926AAFEC500B2568B /* ValidatorKitExample-Bridging-Header.h */,
 			);
 			path = ValidatorKitExample;
-			sourceTree = "<group>";
-		};
-		ECB409B626AED97D0043A6E1 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				ECB409B726AED9C90043A6E1 /* NSString+StringValidations.h */,
-				ECB409B826AED9C90043A6E1 /* NSString+StringValidations.m */,
-			);
-			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +357,10 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-all_load",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -420,6 +416,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-all_load",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -432,7 +432,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BABNQ3LD22;
+				DEVELOPMENT_TEAM = YBM22U9FU3;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -455,7 +455,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BABNQ3LD22;
+				DEVELOPMENT_TEAM = YBM22U9FU3;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -477,7 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BABNQ3LD22;
+				DEVELOPMENT_TEAM = YBM22U9FU3;
 				INFOPLIST_FILE = ValidatorKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,7 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BABNQ3LD22;
+				DEVELOPMENT_TEAM = YBM22U9FU3;
 				INFOPLIST_FILE = ValidatorKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -512,7 +512,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BABNQ3LD22;
+				DEVELOPMENT_TEAM = YBM22U9FU3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -534,7 +534,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BABNQ3LD22;
+				DEVELOPMENT_TEAM = YBM22U9FU3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
