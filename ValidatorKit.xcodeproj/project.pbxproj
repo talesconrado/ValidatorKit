@@ -17,7 +17,7 @@
 		EC8A709626A9B69500DC7547 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8A709526A9B69500DC7547 /* main.m */; };
 		EC8A709B26A9B6B700DC7547 /* ErrorHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8A709A26A9B6B700DC7547 /* ErrorHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC8A709D26A9B72B00DC7547 /* FTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E69EA26A9AB4B008DBA57 /* FTValidator.m */; };
-		ECB409B926AED9C90043A6E1 /* NSString+StringValidations.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB409B726AED9C90043A6E1 /* NSString+StringValidations.h */; };
+		ECB409B926AED9C90043A6E1 /* NSString+StringValidations.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB409B726AED9C90043A6E1 /* NSString+StringValidations.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECB409BA26AED9C90043A6E1 /* NSString+StringValidations.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB409B826AED9C90043A6E1 /* NSString+StringValidations.m */; };
 /* End PBXBuildFile section */
 

@@ -31,7 +31,7 @@
 - (NSMutableArray *) validate:(NSString *) text {
     
     //Check if the string is empty and if so the function throw an error
-    if ([text isEmpty]) {} ;
+//    if ([text isEmpty]) {} ;
     NSMutableArray<ErrorHandle *> *errors = [[NSMutableArray<ErrorHandle *>  alloc] init];
     if (maxLength > 0) {
         @try{
