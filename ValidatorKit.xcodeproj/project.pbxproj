@@ -15,6 +15,8 @@
 		EC8A709626A9B69500DC7547 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8A709526A9B69500DC7547 /* main.m */; };
 		EC8A709B26A9B6B700DC7547 /* ErrorHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8A709A26A9B6B700DC7547 /* ErrorHandle.h */; };
 		EC8A709D26A9B72B00DC7547 /* FTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E69EA26A9AB4B008DBA57 /* FTValidator.m */; };
+		ECB409B926AED9C90043A6E1 /* NSString+StringValidations.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB409B726AED9C90043A6E1 /* NSString+StringValidations.h */; };
+		ECB409BA26AED9C90043A6E1 /* NSString+StringValidations.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB409B826AED9C90043A6E1 /* NSString+StringValidations.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		EC8A709526A9B69500DC7547 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EC8A709A26A9B6B700DC7547 /* ErrorHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorHandle.h; sourceTree = "<group>"; };
 		ECAC632926AAFEC500B2568B /* ValidatorKitExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ValidatorKitExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		ECB409B726AED9C90043A6E1 /* NSString+StringValidations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+StringValidations.h"; sourceTree = "<group>"; };
+		ECB409B826AED9C90043A6E1 /* NSString+StringValidations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringValidations.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		E94E69D026A9AB19008DBA57 /* ValidatorKit */ = {
 			isa = PBXGroup;
 			children = (
+				ECB409B626AED97D0043A6E1 /* Categories */,
 				E94E69D126A9AB19008DBA57 /* ValidatorKit.h */,
 				E94E69D226A9AB19008DBA57 /* Info.plist */,
 				E94E69E826A9AB3C008DBA57 /* FTValidator.h */,
@@ -130,6 +135,15 @@
 			path = ValidatorKitExample;
 			sourceTree = "<group>";
 		};
+		ECB409B626AED97D0043A6E1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				ECB409B726AED9C90043A6E1 /* NSString+StringValidations.h */,
+				ECB409B826AED9C90043A6E1 /* NSString+StringValidations.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -139,6 +153,7 @@
 			files = (
 				E94E69DF26A9AB1A008DBA57 /* ValidatorKit.h in Headers */,
 				E94E69E926A9AB3C008DBA57 /* FTValidator.h in Headers */,
+				ECB409B926AED9C90043A6E1 /* NSString+StringValidations.h in Headers */,
 				EC8A709B26A9B6B700DC7547 /* ErrorHandle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E94E69EB26A9AB4B008DBA57 /* FTValidator.m in Sources */,
+				ECB409BA26AED9C90043A6E1 /* NSString+StringValidations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

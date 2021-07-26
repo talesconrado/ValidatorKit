@@ -7,6 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "FTValidator.h"
 #import "ErrorHandle.h"
+#import "NSString+StringValidations.h"
 /// An object that represents a FTValidator.
 ///
 /// FTValidator is a string validator. Create a new FTValidator() to build constraints and use then to validate your input.
@@ -26,6 +27,9 @@
 /// @param text The string you want to validade.
 /// @return Returns an array containing all the non-passed constraints.
 - (NSMutableArray *) validate:(NSString *) text {
+    
+    //Check if the string is empty and if so the function throw an error
+    if ([text isEmpty]) {} ;
     NSMutableArray<ErrorHandle *> *errors = [[NSMutableArray<ErrorHandle *>  alloc] init];
     if (maxLength > 0) {
         @try{
@@ -86,7 +90,12 @@
         @throw error;
     }
 }
-
+//Recieve a string an throw an error if the string is not a email
+-(void) validateEmail: (NSString *) text{
+    if ([text isEmail]){} else {
+        
+    }
+}
 @end
 
 @implementation ErrorHandle
