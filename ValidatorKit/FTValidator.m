@@ -9,13 +9,15 @@
 #import "ErrorHandle.h"
 
 @implementation FTValidator
-@synthesize maxLength, minLength, allowSpecialCharacters;
+@synthesize maxLength, minLength, allowSpecialCharacters, onlyNumbers, notEmptyNorOnlyWhitespaces;
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
         allowSpecialCharacters = true;
+        onlyNumbers = false;
+        notEmptyNorOnlyWhitespaces = false;
     }
     return self;
 }
@@ -33,7 +35,7 @@
 
     if (minLength > 0) {
         @try{
-            [self validateMaxSize:text andSize:maxLength];
+            [self validateMinSize:text andSize:maxLength];
         } @catch(ErrorHandle *e) {
             [errors addObject:e];
             NSLog(@"Exception: %@", e.errorMessage);
@@ -49,6 +51,24 @@
         } @finally{}
     }
 
+    if (onlyNumbers) {
+        @try{
+            [self validateOnlyNumbers:text];
+        } @catch(ErrorHandle *e) {
+            [errors addObject:e];
+            NSLog(@"Exception: %@", e.errorMessage);
+        } @finally{}
+    }
+
+    if (notEmptyNorOnlyWhitespaces) {
+        @try{
+            [self validateNotEmptyNorWhitespace:text];
+        } @catch(ErrorHandle *e) {
+            [errors addObject:e];
+            NSLog(@"Exception: %@", e.errorMessage);
+        } @finally{}
+    }
+
     return errors;
 }
 
@@ -58,9 +78,6 @@
         ErrorHandle * error = [[ErrorHandle alloc] init];
         error.errorType = tooLong;
         @throw error;
-//        return NO;
-    } else {
-//        return YES;
     }
     
 }
@@ -70,9 +87,6 @@
         ErrorHandle * error = [[ErrorHandle alloc] init];
         error.errorType = tooShort;
         @throw error;
-//        return NO;
-    } else {
-//        return YES;
     }
 }
 
@@ -84,12 +98,26 @@
         ErrorHandle * error = [[ErrorHandle alloc] init];
         error.errorType = specialCharacterFound;
         @throw error;
-//        return NO;
     }
-
-//    return YES;
 }
 
+- (void) validateOnlyNumbers:(NSString *) text {
+    NSCharacterSet* notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    if ([text rangeOfCharacterFromSet:notDigits].location != NSNotFound) {
+        ErrorHandle * error = [[ErrorHandle alloc] init];
+        error.errorType = notANumber;
+        @throw error;
+    }
+}
+
+- (void) validateNotEmptyNorWhitespace:(NSString *) text {
+    NSString * newString = [text stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if ([newString length] == 0) {
+        ErrorHandle * error = [[ErrorHandle alloc] init];
+        error.errorType = notEmptyNorWithWhitespace;
+        @throw error;
+    }
+}
 
 @end
 
@@ -101,6 +129,8 @@
         case tooShort: return(@"Less characters than expected"); break;
         case tooLong: return(@"More characters than expected"); break;
         case specialCharacterFound: return(@"Found special characters"); break;
+        case notANumber: return(@"Found a non number character"); break;
+        case notEmptyNorWithWhitespace: return(@"The string is empty or has only whitespaces"); break;
     }
 }
 

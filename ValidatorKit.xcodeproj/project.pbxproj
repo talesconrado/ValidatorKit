@@ -13,7 +13,7 @@
 		E94E69E926A9AB3C008DBA57 /* FTValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = E94E69E826A9AB3C008DBA57 /* FTValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E94E69EB26A9AB4B008DBA57 /* FTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E69EA26A9AB4B008DBA57 /* FTValidator.m */; };
 		EC8A709626A9B69500DC7547 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8A709526A9B69500DC7547 /* main.m */; };
-		EC8A709B26A9B6B700DC7547 /* ErrorHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8A709A26A9B6B700DC7547 /* ErrorHandle.h */; };
+		EC8A709B26A9B6B700DC7547 /* ErrorHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8A709A26A9B6B700DC7547 /* ErrorHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC8A709D26A9B72B00DC7547 /* FTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E69EA26A9AB4B008DBA57 /* FTValidator.m */; };
 /* End PBXBuildFile section */
 
@@ -46,11 +46,11 @@
 		E94E69D726A9AB1A008DBA57 /* ValidatorKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValidatorKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94E69DC26A9AB1A008DBA57 /* ValidatorKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidatorKitTests.m; sourceTree = "<group>"; };
 		E94E69DE26A9AB1A008DBA57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E94E69E826A9AB3C008DBA57 /* FTValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTValidator.h; sourceTree = "<group>"; };
-		E94E69EA26A9AB4B008DBA57 /* FTValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTValidator.m; sourceTree = "<group>"; };
+		E94E69E826A9AB3C008DBA57 /* FTValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FTValidator.h; path = ValidatorKit/FTValidator.h; sourceTree = SOURCE_ROOT; };
+		E94E69EA26A9AB4B008DBA57 /* FTValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FTValidator.m; path = ValidatorKit/FTValidator.m; sourceTree = SOURCE_ROOT; };
 		EC8A709326A9B69500DC7547 /* ValidatorKitExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ValidatorKitExample; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8A709526A9B69500DC7547 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EC8A709A26A9B6B700DC7547 /* ErrorHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorHandle.h; sourceTree = "<group>"; };
+		EC8A709A26A9B6B700DC7547 /* ErrorHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ErrorHandle.h; path = ValidatorKit/ErrorHandle.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,7 +413,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = YBM22U9FU3;
+				DEVELOPMENT_TEAM = BABNQ3LD22;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -436,7 +436,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = YBM22U9FU3;
+				DEVELOPMENT_TEAM = BABNQ3LD22;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -492,7 +492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YBM22U9FU3;
+				DEVELOPMENT_TEAM = BABNQ3LD22;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				PRODUCT_BUNDLE_IDENTIFIER = talesconrado.ValidatorKit;
@@ -505,7 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YBM22U9FU3;
+				DEVELOPMENT_TEAM = BABNQ3LD22;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				PRODUCT_BUNDLE_IDENTIFIER = talesconrado.ValidatorKit;
