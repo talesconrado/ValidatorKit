@@ -44,7 +44,7 @@
 
     if (minLength > 0) {
         @try{
-            [self validateMinSize:text andSize:maxLength];
+            [self validateMinSize:text andSize:minLength];
         } @catch(ErrorHandle *e) {
             [errors addObject:e];
             NSLog(@"Exception: %@", e.errorMessage);

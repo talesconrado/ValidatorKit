@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E94E69D826A9AB1A008DBA57 /* ValidatorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94E69CE26A9AB19008DBA57 /* ValidatorKit.framework */; };
-		E94E69DD26A9AB1A008DBA57 /* ValidatorKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E69DC26A9AB1A008DBA57 /* ValidatorKitTests.m */; };
+		E9017B5626AEE0A400F213D4 /* ValidatorKitTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9017B5526AEE0A400F213D4 /* ValidatorKitTests_Swift.swift */; };
+		E9017B5826AEE0A400F213D4 /* ValidatorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94E69CE26A9AB19008DBA57 /* ValidatorKit.framework */; };
+		E9017B6326AEE1E500F213D4 /* ValidatorKit-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = E9017B6026AEE16F00F213D4 /* ValidatorKit-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9017B6426AEED5E00F213D4 /* FTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E69EA26A9AB4B008DBA57 /* FTValidator.m */; };
 		E94E69DF26A9AB1A008DBA57 /* ValidatorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E94E69D126A9AB19008DBA57 /* ValidatorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E94E69E926A9AB3C008DBA57 /* FTValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = E94E69E826A9AB3C008DBA57 /* FTValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E94E69EB26A9AB4B008DBA57 /* FTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E69EA26A9AB4B008DBA57 /* FTValidator.m */; };
@@ -20,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E94E69D926A9AB1A008DBA57 /* PBXContainerItemProxy */ = {
+		E9017B5926AEE0A400F213D4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E94E69C526A9AB19008DBA57 /* Project object */;
 			proxyType = 1;
@@ -42,12 +44,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E9017B5326AEE0A400F213D4 /* ValidatorKitTests-Swift.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ValidatorKitTests-Swift.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9017B5526AEE0A400F213D4 /* ValidatorKitTests_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorKitTests_Swift.swift; sourceTree = "<group>"; };
+		E9017B5726AEE0A400F213D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9017B6026AEE16F00F213D4 /* ValidatorKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ValidatorKit-Bridging-Header.h"; path = "ValidatorKit/ValidatorKit-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		E94E69CE26A9AB19008DBA57 /* ValidatorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ValidatorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94E69D126A9AB19008DBA57 /* ValidatorKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidatorKit.h; sourceTree = "<group>"; };
 		E94E69D226A9AB19008DBA57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E94E69D726A9AB1A008DBA57 /* ValidatorKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValidatorKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E94E69DC26A9AB1A008DBA57 /* ValidatorKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidatorKitTests.m; sourceTree = "<group>"; };
-		E94E69DE26A9AB1A008DBA57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E94E69E826A9AB3C008DBA57 /* FTValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FTValidator.h; path = ValidatorKit/FTValidator.h; sourceTree = SOURCE_ROOT; };
 		E94E69EA26A9AB4B008DBA57 /* FTValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FTValidator.m; path = ValidatorKit/FTValidator.m; sourceTree = SOURCE_ROOT; };
 		EC8A709326A9B69500DC7547 /* ValidatorKitExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ValidatorKitExample; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,18 +62,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E9017B5026AEE0A400F213D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9017B5826AEE0A400F213D4 /* ValidatorKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E94E69CB26A9AB19008DBA57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E94E69D426A9AB1A008DBA57 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E94E69D826A9AB1A008DBA57 /* ValidatorKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +87,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9017B5426AEE0A400F213D4 /* ValidatorKitTests-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				E9017B5526AEE0A400F213D4 /* ValidatorKitTests_Swift.swift */,
+				E9017B5726AEE0A400F213D4 /* Info.plist */,
+			);
+			path = "ValidatorKitTests-Swift";
+			sourceTree = "<group>";
+		};
 		E94E69C426A9AB19008DBA57 = {
 			isa = PBXGroup;
 			children = (
 				E94E69D026A9AB19008DBA57 /* ValidatorKit */,
-				E94E69DB26A9AB1A008DBA57 /* ValidatorKitTests */,
 				EC8A709426A9B69500DC7547 /* ValidatorKitExample */,
+				E9017B5426AEE0A400F213D4 /* ValidatorKitTests-Swift */,
 				E94E69CF26A9AB19008DBA57 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,8 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				E94E69CE26A9AB19008DBA57 /* ValidatorKit.framework */,
-				E94E69D726A9AB1A008DBA57 /* ValidatorKitTests.xctest */,
 				EC8A709326A9B69500DC7547 /* ValidatorKitExample */,
+				E9017B5326AEE0A400F213D4 /* ValidatorKitTests-Swift.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,17 +125,9 @@
 				E94E69E826A9AB3C008DBA57 /* FTValidator.h */,
 				E94E69EA26A9AB4B008DBA57 /* FTValidator.m */,
 				EC8A709A26A9B6B700DC7547 /* ErrorHandle.h */,
+				E9017B6026AEE16F00F213D4 /* ValidatorKit-Bridging-Header.h */,
 			);
 			path = ValidatorKit;
-			sourceTree = "<group>";
-		};
-		E94E69DB26A9AB1A008DBA57 /* ValidatorKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				E94E69DC26A9AB1A008DBA57 /* ValidatorKitTests.m */,
-				E94E69DE26A9AB1A008DBA57 /* Info.plist */,
-			);
-			path = ValidatorKitTests;
 			sourceTree = "<group>";
 		};
 		EC8A709426A9B69500DC7547 /* ValidatorKitExample */ = {
@@ -155,12 +159,31 @@
 				E94E69E926A9AB3C008DBA57 /* FTValidator.h in Headers */,
 				ECB409B926AED9C90043A6E1 /* NSString+StringValidations.h in Headers */,
 				EC8A709B26A9B6B700DC7547 /* ErrorHandle.h in Headers */,
+				E9017B6326AEE1E500F213D4 /* ValidatorKit-Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		E9017B5226AEE0A400F213D4 /* ValidatorKitTests-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9017B5D26AEE0A400F213D4 /* Build configuration list for PBXNativeTarget "ValidatorKitTests-Swift" */;
+			buildPhases = (
+				E9017B4F26AEE0A400F213D4 /* Sources */,
+				E9017B5026AEE0A400F213D4 /* Frameworks */,
+				E9017B5126AEE0A400F213D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9017B5A26AEE0A400F213D4 /* PBXTargetDependency */,
+			);
+			name = "ValidatorKitTests-Swift";
+			productName = "ValidatorKitTests-Swift";
+			productReference = E9017B5326AEE0A400F213D4 /* ValidatorKitTests-Swift.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E94E69CD26A9AB19008DBA57 /* ValidatorKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E94E69E226A9AB1A008DBA57 /* Build configuration list for PBXNativeTarget "ValidatorKit" */;
@@ -178,24 +201,6 @@
 			productName = ValidatorKit;
 			productReference = E94E69CE26A9AB19008DBA57 /* ValidatorKit.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		E94E69D626A9AB1A008DBA57 /* ValidatorKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E94E69E526A9AB1A008DBA57 /* Build configuration list for PBXNativeTarget "ValidatorKitTests" */;
-			buildPhases = (
-				E94E69D326A9AB1A008DBA57 /* Sources */,
-				E94E69D426A9AB1A008DBA57 /* Frameworks */,
-				E94E69D526A9AB1A008DBA57 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E94E69DA26A9AB1A008DBA57 /* PBXTargetDependency */,
-			);
-			name = ValidatorKitTests;
-			productName = ValidatorKitTests;
-			productReference = E94E69D726A9AB1A008DBA57 /* ValidatorKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		EC8A709226A9B69500DC7547 /* ValidatorKitExample */ = {
 			isa = PBXNativeTarget;
@@ -220,13 +225,15 @@
 		E94E69C526A9AB19008DBA57 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					E94E69CD26A9AB19008DBA57 = {
+					E9017B5226AEE0A400F213D4 = {
 						CreatedOnToolsVersion = 12.5;
 					};
-					E94E69D626A9AB1A008DBA57 = {
+					E94E69CD26A9AB19008DBA57 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					EC8A709226A9B69500DC7547 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -248,21 +255,21 @@
 			projectRoot = "";
 			targets = (
 				E94E69CD26A9AB19008DBA57 /* ValidatorKit */,
-				E94E69D626A9AB1A008DBA57 /* ValidatorKitTests */,
 				EC8A709226A9B69500DC7547 /* ValidatorKitExample */,
+				E9017B5226AEE0A400F213D4 /* ValidatorKitTests-Swift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E94E69CC26A9AB19008DBA57 /* Resources */ = {
+		E9017B5126AEE0A400F213D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E94E69D526A9AB1A008DBA57 /* Resources */ = {
+		E94E69CC26A9AB19008DBA57 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,20 +279,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E9017B4F26AEE0A400F213D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9017B6426AEED5E00F213D4 /* FTValidator.m in Sources */,
+				E9017B5626AEE0A400F213D4 /* ValidatorKitTests_Swift.swift in Sources */,
+				ECB409BA26AED9C90043A6E1 /* NSString+StringValidations.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E94E69CA26A9AB19008DBA57 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E94E69EB26A9AB4B008DBA57 /* FTValidator.m in Sources */,
-				ECB409BA26AED9C90043A6E1 /* NSString+StringValidations.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E94E69D326A9AB1A008DBA57 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E94E69DD26A9AB1A008DBA57 /* ValidatorKitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +309,56 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E94E69DA26A9AB1A008DBA57 /* PBXTargetDependency */ = {
+		E9017B5A26AEE0A400F213D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E94E69CD26A9AB19008DBA57 /* ValidatorKit */;
-			targetProxy = E94E69D926A9AB1A008DBA57 /* PBXContainerItemProxy */;
+			targetProxy = E9017B5926AEE0A400F213D4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E9017B5B26AEE0A400F213D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BABNQ3LD22;
+				INFOPLIST_FILE = "ValidatorKitTests-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "talesconrado.ValidatorKitTests-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E9017B5C26AEE0A400F213D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BABNQ3LD22;
+				INFOPLIST_FILE = "ValidatorKitTests-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "talesconrado.ValidatorKitTests-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E94E69E026A9AB1A008DBA57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -430,6 +480,7 @@
 		E94E69E326A9AB1A008DBA57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BABNQ3LD22;
@@ -446,6 +497,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = talesconrado.ValidatorKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ValidatorKit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -453,6 +507,7 @@
 		E94E69E426A9AB1A008DBA57 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BABNQ3LD22;
@@ -469,40 +524,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = talesconrado.ValidatorKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		E94E69E626A9AB1A008DBA57 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BABNQ3LD22;
-				INFOPLIST_FILE = ValidatorKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = talesconrado.ValidatorKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		E94E69E726A9AB1A008DBA57 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BABNQ3LD22;
-				INFOPLIST_FILE = ValidatorKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = talesconrado.ValidatorKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ValidatorKit-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -553,6 +576,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E9017B5D26AEE0A400F213D4 /* Build configuration list for PBXNativeTarget "ValidatorKitTests-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9017B5B26AEE0A400F213D4 /* Debug */,
+				E9017B5C26AEE0A400F213D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E94E69C826A9AB19008DBA57 /* Build configuration list for PBXProject "ValidatorKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -567,15 +599,6 @@
 			buildConfigurations = (
 				E94E69E326A9AB1A008DBA57 /* Debug */,
 				E94E69E426A9AB1A008DBA57 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E94E69E526A9AB1A008DBA57 /* Build configuration list for PBXNativeTarget "ValidatorKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E94E69E626A9AB1A008DBA57 /* Debug */,
-				E94E69E726A9AB1A008DBA57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
