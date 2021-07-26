@@ -7,7 +7,9 @@
 #import <Foundation/Foundation.h>
 #import "FTValidator.h"
 #import "ErrorHandle.h"
-
+/// An object that represents a FTValidator.
+///
+/// FTValidator is a string validator. Create a new FTValidator() to build constraints and use then to validate your input.
 @implementation FTValidator
 @synthesize maxLength, minLength, allowSpecialCharacters;
 
@@ -20,6 +22,9 @@
     return self;
 }
 
+/// Validate the passed string throw the constraints
+/// @param text The string you want to validade.
+/// @return Returns an array containing all the non-passed constraints.
 - (NSMutableArray *) validate:(NSString *) text {
     NSMutableArray<ErrorHandle *> *errors = [[NSMutableArray<ErrorHandle *>  alloc] init];
     if (maxLength > 0) {
@@ -52,30 +57,25 @@
     return errors;
 }
 
-
+/// Recieve a string and a size and throw an error if the string is bigger than the given size
 - (void) validateMaxSize:(NSString *) text andSize: (int) size {
     if ([text length] > size) {
         ErrorHandle * error = [[ErrorHandle alloc] init];
         error.errorType = tooLong;
         @throw error;
-//        return NO;
-    } else {
-//        return YES;
     }
-    
 }
 
+/// Recieve a string and a size and throw an error if the string is smaller than the given size
 - (void) validateMinSize:(NSString *) text andSize: (int) size {
     if ([text length] < size) {
         ErrorHandle * error = [[ErrorHandle alloc] init];
         error.errorType = tooShort;
         @throw error;
-//        return NO;
-    } else {
-//        return YES;
     }
 }
 
+/// Recieve a string throw an error if the string has an special character.
 - (void) validateSpecial:(NSString *) text {
 
     NSCharacterSet * set = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
@@ -84,15 +84,10 @@
         ErrorHandle * error = [[ErrorHandle alloc] init];
         error.errorType = specialCharacterFound;
         @throw error;
-//        return NO;
     }
-
-//    return YES;
 }
 
-
 @end
-
 
 @implementation ErrorHandle
 
