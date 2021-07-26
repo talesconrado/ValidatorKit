@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FTValidator.h"
+#import "ErrorHandle.h"
 
 //! Project version number for ValidatorKit.
 FOUNDATION_EXPORT double ValidatorKitVersionNumber;
