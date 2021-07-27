@@ -32,11 +32,6 @@
 /// @return Returns an array containing all the non-passed constraints.
 - (NSMutableArray *) validate:(NSString *) text {
     //Check if the string is empty and if so the function throw an error
-    if ([text isEmail]){
-        NSLog(@"entrou");
-    } else {
-        NSLog(@"Nao entrou");
-    }
     NSMutableArray<ErrorHandle *> *errors = [[NSMutableArray<ErrorHandle *>  alloc] init];
     if (maxLength > 0) {
         @try{
@@ -128,21 +123,18 @@
 
 //Recieve a string an throw an error if the string has no character
 - (void) validateNotEmptyNorWhitespace:(NSString *) text {
-    NSString * newString = [text stringByReplacingOccurrencesOfString:@" " withString:@""];
-    if ([newString length] == 0) {
+    if ([text isEmpty]) {
         ErrorHandle * error = [[ErrorHandle alloc] init];
         error.errorType = notEmptyNorWithWhitespace;
         @throw error;
-    }
+    } else {}
 }
 
 //Recieve a string an throw an error if the string is not a email
--(void) validateEmail: (NSString *) text{
-    if ([text isEmail]){} else {
-        ErrorHandle * error = [[ErrorHandle alloc] init];
-        error.errorType = notAnEmail;
-        @throw error;
-    }
+-(BOOL) validateEmail: (NSString *) text{
+    if ([text isEmail]){
+        return true;
+    } else {return false;}
 }
 @end
 
@@ -155,7 +147,6 @@
         case specialCharacterFound: return(@"Found special characters"); break;
         case notANumber: return(@"Found a non number character"); break;
         case notEmptyNorWithWhitespace: return(@"The string is empty or has only whitespaces"); break;
-        case notAnEmail: return(@"The string is empty or has only whitespaces"); break;
     }
 }
 

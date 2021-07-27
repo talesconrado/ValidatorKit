@@ -111,4 +111,9 @@ class ValidatorKitTests_Swift: XCTestCase {
 
         XCTAssert(errors?.count == 1)
     }
+    
+    func test_notAnEmailThenIsNotValid() { XCTAssertFalse(sut.validateEmail("  ")) }
+    
+    func test_anEmailThenIsValid() { XCTAssertTrue(sut.validateEmail("example@gmail.com")) }
 }
+

@@ -13,6 +13,6 @@
 @property BOOL onlyNumbers;
 @property BOOL notEmptyNorOnlyWhitespaces;
 -(NSMutableArray *) validate:(NSString *) text;
--(void) validateEmail:(NSString *) text; 
+-(BOOL) validateEmail:(NSString *) text;
 
 @end

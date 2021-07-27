@@ -14,7 +14,6 @@ typedef NS_ENUM(NSInteger, InvalidString) {
     specialCharacterFound,
     notANumber,
     notEmptyNorWithWhitespace,
-    notAnEmail,
 };
 
 
