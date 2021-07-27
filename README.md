@@ -8,6 +8,7 @@ With ValidatorKit, all you had to do is create an instance of FTValidator with t
 The `validate(_ text: String)` check each constraint before returns an array of ErrorHandle, an exception containing all the constraints that failed. 
 
 **Constraints**
+
 ``` maxLenght(int)``` define an max length for the given string. 
 
 ``` minLenght(int)``` define an min length for the given string.
@@ -45,17 +46,19 @@ All the functions can return one or an array of ErrorHandle, an object containin
 
   
 ```swift
+import ValidatorKit
+
 let stringValidator: FTValidator = {
     let validator = FTValidator()
     validator.maxLength = 4
     validator.minLength = 1
-    validator.allowSpecialCharacters =` false
+    validator.allowSpecialCharacters = false
     return validator
-    }()
+}()
     
-    let myString = "MY STRING"
-    
-    guard stringValidator.validate(myString).count == 0 else { 
+let myString = "MY STRING"
+let errorsArray = stringValidator.validate(myString)
+guard errorsArray.count == 0 else { 
     // handle errors
-    }
+}
 ```
