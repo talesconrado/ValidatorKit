@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
     spec.homepage = "https://github.com/talesconrado/FTValidatorKit"
     spec.license = { :type => "MIT", :file => "LICENSE" }
     spec.author = "Tales Conrado"
-    spec.ios.deployment_target = "14.5"
+    spec.ios.deployment_target = "13.0"
     spec.source = { :git => "https://github.com/talesconrado/ValidatorKit.git", :tag => spec.version }
     spec.source_files = "ValidatorKit/*.{h,m}"
     spec.swift_version = "5.3"
