@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
     spec.name = "ValidatorKit"
-    spec.version = "1.1.1"
+    spec.version = "1.2.0"
     spec.summary = "A short description of ValidatorKit."
     spec.description = "A complete description of ValidatorKit and very good."
     spec.homepage = "https://github.com/talesconrado/FTValidatorKit"
