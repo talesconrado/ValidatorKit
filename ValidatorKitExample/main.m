@@ -13,9 +13,9 @@ int main(int argc, const char * argv[]) {
     FTValidator *validator = [[FTValidator alloc] init];
     validator.maxLength = 3;
     validator.minLength = 8;
-    validator.allowSpecialCharacters = true;
+    validator.allowSpecialCharacters = false;
     validator.notEmptyNorOnlyWhitespaces = true ;
-    [validator validate: @"Maior%"];
+    [validator validate: @"Teste Teste"];
 
     return 0;
 }

@@ -14,5 +14,6 @@
 @property BOOL notEmptyNorOnlyWhitespaces;
 -(NSMutableArray *) validate:(NSString *) text;
 -(BOOL) validateEmail:(NSString *) text;
+-(NSString *) removeWhiteSpace:(NSString *) text;
 
 @end
