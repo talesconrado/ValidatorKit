@@ -21,5 +21,4 @@
     BOOL isValid = [emailTest evaluateWithObject: self];
     return isValid;
 }
-//}
 @end

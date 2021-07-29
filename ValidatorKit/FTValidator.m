@@ -111,10 +111,9 @@
 
 /// Recieve a string throw an error if the string has an special character.
 - (void) validateSpecial:(NSString *) text {
-
+    NSString * validString = [self removeWhiteSpace: text];
     NSCharacterSet * set = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
-
-    if ([text rangeOfCharacterFromSet:set].location != NSNotFound) {
+    if ([validString rangeOfCharacterFromSet:set].location != NSNotFound) {
         ErrorHandle * error = [[ErrorHandle alloc] init];
         error.errorType = specialCharacterFound;
         @throw error;
@@ -145,6 +144,12 @@
     if ([text isEmail]){
         return true;
     } else {return false;}
+}
+
+//Recieves a string an return the string without whitespaces
+-(NSString *) removeWhiteSpace: (NSString *) text {
+    NSString* withoutSpaceString = [[text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsJoinedByString:(@"")];
+    return withoutSpaceString;
 }
 
 - (void)validateCEP:(NSString *)cep {
