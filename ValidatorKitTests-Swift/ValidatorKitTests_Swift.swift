@@ -115,5 +115,19 @@ class ValidatorKitTests_Swift: XCTestCase {
     func test_notAnEmailThenIsNotValid() { XCTAssertFalse(sut.validateEmail("  ")) }
     
     func test_anEmailThenIsValid() { XCTAssertTrue(sut.validateEmail("example@gmail.com")) }
+
+    func test_checkCEPThenIsNotValid() {
+        sut.isAValidCEP = true
+        let errors = sut.validate("60656056")
+
+        XCTAssert(errors?.count == 1)
+    }
+
+    func test_checkCEPThenIsValid() {
+        sut.isAValidCEP = true
+        let errors = sut.validate("62960-000")
+
+        XCTAssert(errors?.count == 0)
+    }
 }
 

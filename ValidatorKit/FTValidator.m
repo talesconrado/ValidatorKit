@@ -14,7 +14,7 @@
 ///
 /// FTValidator is a string validator. Create a new FTValidator() to build constraints and use then to validate your input.
 @implementation FTValidator
-@synthesize maxLength, minLength, allowSpecialCharacters, onlyNumbers, notEmptyNorOnlyWhitespaces;
+@synthesize maxLength, minLength, allowSpecialCharacters, onlyNumbers, notEmptyNorOnlyWhitespaces, isAValidCEP;
 
 - (instancetype)init
 {
@@ -23,6 +23,7 @@
         allowSpecialCharacters = true;
         onlyNumbers = false;
         notEmptyNorOnlyWhitespaces = false;
+        isAValidCEP = false;
     }
     return self;
 }
@@ -72,6 +73,15 @@
     if (notEmptyNorOnlyWhitespaces) {
         @try{
             [self validateNotEmptyNorWhitespace:text];
+        } @catch(ErrorHandle *e) {
+            [errors addObject:e];
+            NSLog(@"Exception: %@", e.errorMessage);
+        } @finally{}
+    }
+
+    if (isAValidCEP) {
+        @try{
+            [self validateCEP:text];
         } @catch(ErrorHandle *e) {
             [errors addObject:e];
             NSLog(@"Exception: %@", e.errorMessage);
@@ -136,6 +146,17 @@
         return true;
     } else {return false;}
 }
+
+- (void)validateCEP:(NSString *)cep {
+    NSString *regex = @"^[0-9]{5}-[0-9]{3}$";
+    NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    BOOL isCEP = [test evaluateWithObject: cep];
+    if (!isCEP) {
+        ErrorHandle * error = [[ErrorHandle alloc] init];
+        error.errorType = invalidCEP;
+        @throw error;
+    }
+}
 @end
 
 @implementation ErrorHandle
@@ -147,6 +168,7 @@
         case specialCharacterFound: return(@"Found special characters"); break;
         case notANumber: return(@"Found a non number character"); break;
         case notEmptyNorWithWhitespace: return(@"The string is empty or has only whitespaces"); break;
+        case invalidCEP: return(@"The string does not represent a valid CEP"); break;
     }
 }
 
