@@ -58,7 +58,7 @@ let stringValidator: FTValidator = {
     
 let myString = "MY STRING"
 let errorsArray = stringValidator.validate(myString)
-guard errorsArray.count == 0 else { 
+guard errorsArray?.count == 0 else { 
     // handle errors
 }
 ```
